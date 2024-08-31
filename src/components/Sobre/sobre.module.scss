@@ -1,0 +1,66 @@
+@mixin Flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section {
+  min-height: 50vh;
+  @include Flexbox();
+  margin: 2rem 15% 0 15%;
+
+  img {
+    width: 30vw;
+    height: 40vh;
+  }
+
+  @media (max-width: 899px) {
+    height: none;
+    flex-direction: column;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.sobre {
+  width: 35vw;
+  height: 30vh;
+  max-width: 400px;
+  @include Flexbox();
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    font-weight: 900;
+  }
+
+  button {
+    width: 30%;
+    height: 4vh;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #ffbd48;
+    &:hover {
+      background-color: #ffad1f;
+    }
+  }
+
+  @media (max-width: 899px) {
+    width: 100%;
+    max-width: 700px;
+    min-height: 35vh;
+    min-height: 50vh;
+    margin: 2rem 0 2rem 0;
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 499px) {
+    button {
+      width: 70%;
+    }
+  }
+}
